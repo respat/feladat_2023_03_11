@@ -1,4 +1,5 @@
-const tableBody = document.querySelector('#tableBody')
+const tableBody = document.querySelector('#tableBody');
+
 
 const gepLista = [
     { name: "Chassis", wheels: 28, purpose: "Offroad", price: 557900},
@@ -9,9 +10,18 @@ const gepLista = [
     { name: "Sirmium", wheels: 29, purpose: "Hegyi", price: 264900}
 ];
 
+// function listaRendez(){
+//     abc = gepLista.sort((a, b) => {
+//         if (a.name < b.name) {
+//           return -1;
+//         }
+//       });
+// }
+
 gepKiIr();
 
 function gepKiIr(){
+    // listaRendez();
     gepLista.forEach((gep) =>{
         let tr = document.createElement('tr');
         let tdName = document.createElement('td');
@@ -28,6 +38,5 @@ function gepKiIr(){
         tr.append(tdWheels);
         tr.append(tdPurpose);
         tr.append(tdPrice);
-    
     });
 }

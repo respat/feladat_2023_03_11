@@ -5,25 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>NodeJS Sablon</title>
+    <title>Feladat 2023.03.11</title>
 </head>
 <body>
+
     <div class="container">
-
+        <div class="filter-container">
+            <button>Szűrés</button>
+        </div>
+        <table>
+            <thead>
+                <tr class="theader">
+                    <th>Név</th>
+                    <th>Kerék</th>
+                    <th>Használat</th>
+                    <th>Ár</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
     </div>
-    <table id="" >
-        <thead>
-            <tr>
-                <th>Név</th>
-                <th>Kerék</th>
-                <th>Használat</th>
-                <th>Ár</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
-
-        </tbody>
-    </table>
     <script src="app.js"></script>
+    <script type="module" src="anime.min.js"></script>
 </body>
 </html>

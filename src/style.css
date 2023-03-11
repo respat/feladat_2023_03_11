@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.filter-container {
+    display: flex;
+    width: 50%;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.filter-container button {
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #9883e5;
+    width: 100px;
+    height: 40px;
+}
+
+.filter-container button:hover {
+    background-color: #8c75df;
+}
+
+
+table {
+    width: 50%;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+tr {
+
+    background-color: white;
+    margin: 20px;
+    border-radius: 15px;
+    padding-bottom: 1em;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+td, th {
+    width: 100px;
+    height: 4em;
+    text-align: center;
+    cursor:default;
+}
+
+td:first-child, th:first-child{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+td:last-child, th:last-child {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+.theader th {
+    border-bottom: 3px solid #9883e5;
+}
+
+.theader:hover {
+    background-color: white;
+}
+
+
+
+@media (max-width: 1100px) {
+    table {
+        width: 80%;
+        border-collapse: separate;
+        border-spacing: 0 0.5em;
+    }
+    .filter-container {
+        display: flex;
+        width: 80%;
+        justify-content: end;
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 650px) {
+    table {
+        width: 90%;
+        border-collapse: separate;
+        border-spacing: 0 0.5em;
+    }
+    .filter-container {
+        display: flex;
+        width: 90%;
+        justify-content: end;
+        align-items: flex-end;
+    }
+}
+
+@keyframes example {
+    from {transform: translate(0, -100px);}
+    to {transform: translate(0, 0);}
+  }
