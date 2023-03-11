@@ -8,25 +8,25 @@
     <title>Feladat 2023.03.11</title>
 </head>
 <body>
-
     <div class="container">
+        <h1>Gépek</h1>
         <div class="filter-container">
-            <button>Szűrés</button>
+            <button>Szűrés<span class="circle"></span></button>
         </div>
         <table>
             <thead>
                 <tr class="theader">
-                    <th>Név</th>
-                    <th>Kerék</th>
-                    <th>Használat</th>
-                    <th>Ár</th>
+                    <th id="name">Név</th>
+                    <th id="wheels">Kerék</th>
+                    <th id="purpose">Használat</th>
+                    <th id="price">Ár</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
             </tbody>
         </table>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="app.js"></script>
-    <script type="module" src="anime.min.js"></script>
 </body>
 </html>
