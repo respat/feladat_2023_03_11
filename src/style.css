@@ -1,3 +1,15 @@
+:root{
+    --bg-light: #fafafa;
+    --text-light: #fff;
+    --table-light: rgba(255, 255, 255, 0.6);
+    --bg-dark: #282828;
+    --text-dark: #000;
+    --table-dark: rgba(56, 56, 56, 0.8);
+    --table-dark-hover: #484848;
+    --purple: #9883e5;
+    --purple-hover: #8c75df;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +17,7 @@
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: var(--bg-light);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -24,17 +36,33 @@ body {
     align-items: flex-end;
 }
 
+.cim-light {
+    color: white;
+}
+
+.cim {
+    font-size: 64px;
+    text-transform: uppercase;
+}
+
+.cim2 {
+    position: absolute;
+    font-size: 160px;
+    opacity: 0.1;
+
+}
+
 .filter-container button {
     border: none;
     border-radius: 20px;
     color: white;
-    background-color: #9883e5;
+    background-color: var(--purple);
     width: 100px;
     height: 40px;
 }
 
 .filter-container button:hover {
-    background-color: #8c75df;
+    background-color: var(--purple-hover);
 }
 
 
@@ -44,11 +72,17 @@ table {
     border-spacing: 0 1em;
 }
 tr {
-    background-color: white;
+    color: var(--text-dark);
+    background-color: var(--table-light);
     margin: 20px;
     border-radius: 15px;
     padding-bottom: 1em;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+th {
+    border-bottom: 2px solid var(--purple);
 }
 
 td, th {
@@ -56,6 +90,23 @@ td, th {
     height: 4em;
     text-align: center;
     cursor:default;
+}
+
+.dark-bg {
+    background-color: var(--bg-dark);
+}
+
+.dark {
+    background-color: var(--table-dark);
+    color: var(--text-light);
+}
+
+
+
+tbody > tr:hover {
+    animation-name: hover;
+    animation-duration: 400ms;
+    background-color: var(--purple-hover);
 }
 
 td:first-child, th:first-child{
@@ -66,21 +117,6 @@ td:first-child, th:first-child{
 td:last-child, th:last-child {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-.theader th {
-    border-bottom: 3px solid #9883e5;
-}
-
-.theader:hover {
-    background-color: white;
-}
-
-.filter-container button {
-    position: absolute;
 }
 
 @media (max-width: 1100px) {
@@ -121,7 +157,7 @@ tr:hover {
     }
 }
 
-@keyframes example {
-    from {transform: translate(0, -100px);}
-    to {transform: translate(0, 0);}
+@keyframes hover {
+    from {background-color: rgba(0, 0, 0, 0);}
+    to {background-color: var(--purple-hover);}
   }
