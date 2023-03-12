@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
+
 :root{
     --bg-light: #fafafa;
     --text-light: #fff;
@@ -7,7 +9,7 @@
     --table-dark: rgba(56, 56, 56, 0.8);
     --table-dark-hover: #484848;
     --purple: #9883e5;
-    --purple-hover: #8c75df;
+    --purple-hover: rgb(167, 147, 240);
 }
 
 * {
@@ -19,9 +21,11 @@
 body {
     background-color: var(--bg-light);
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
 
 .container {
+    min-height: 735px;
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -29,30 +33,95 @@ body {
     flex-direction: column;
 }
 
-.filter-container {
-    display: flex;
-    width: 50%;
-    justify-content: end;
-    align-items: flex-end;
-}
-
 .cim-light {
     color: white;
 }
 
-.cim {
-    font-size: 64px;
-    text-transform: uppercase;
+.top {
+    width: 50%;
+    height: 20px;
+    background-color: #000;
 }
 
-.cim2 {
-    position: absolute;
-    font-size: 160px;
-    opacity: 0.1;
-
+.icon {
+    cursor: default;
 }
 
-.filter-container button {
+.filter-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+    height: 40px;
+}
+
+.sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+    background-color: var(--bg-light);
+    border: 1px solid rgba(140, 117, 223, 0.4);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+.sort p {
+    margin: 0px 20px;
+    font-size: 14px;
+}
+
+.btnSort {
+    border: 2px solid var(--purple);
+    border-radius: 20px;
+    color: white;
+    font-size: large;
+    text-align: right;
+    padding: 6px;
+    background-color: var(--purple);
+    width: 40px;
+    height: 40px;
+}
+.btnSort:hover {
+    border-color: var(--purple-hover);
+    background-color: var(--purple-hover);
+}
+
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    background-color: var(--bg-light);
+    border: 1px solid rgba(140, 117, 223, 0.4);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.btnToggle {
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: large;
+    text-align: right;
+    background: radial-gradient(circle, rgba(94,93,92,1) 0%, rgba(54,54,54,1) 92%);
+    width: 30px;
+    height: 30px;
+}
+
+.szerzo {
+    margin-top: 40px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.szerzo-light {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.btnFilter {
     border: none;
     border-radius: 20px;
     color: white;
@@ -61,10 +130,42 @@ body {
     height: 40px;
 }
 
-.filter-container button:hover {
-    background-color: var(--purple-hover);
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' black,
+    'wght' 200,
+    'GRAD' 200,
+    'opsz' 100
+  }
+
+.cim {
+    display: flex;
+    opacity: 0.8;
+    text-transform: uppercase;
 }
 
+.nav {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.color-switch {
+    display: end;
+    justify-content: center;
+    grid-column: 2;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 60px;
+}
 
 table {
     width: 50%;
@@ -78,7 +179,6 @@ tr {
     border-radius: 15px;
     padding-bottom: 1em;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
 }
 
 th {
@@ -92,6 +192,16 @@ td, th {
     cursor:default;
 }
 
+.idezet {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Esteban', sans-serif;
+    font-size: large;
+    padding-bottom: 30px;
+    width: 30%;
+}
+
 .dark-bg {
     background-color: var(--bg-dark);
 }
@@ -99,9 +209,8 @@ td, th {
 .dark {
     background-color: var(--table-dark);
     color: var(--text-light);
+    fill: var(--text-light)
 }
-
-
 
 tbody > tr:hover {
     animation-name: hover;
@@ -131,13 +240,17 @@ td:last-child, th:last-child {
         justify-content: end;
         align-items: flex-end;
     }
+    .nav {
+        display: flex;
+        width: 80%;
+    }
 }
 
 @media (max-width: 650px) {
     table {
         width: 90%;
         border-collapse: separate;
-        border-spacing: 0 0.5em;
+        border-spacing: 0 1em;
     }
     .filter-container {
         display: flex;
@@ -145,16 +258,24 @@ td:last-child, th:last-child {
         justify-content: end;
         align-items: flex-end;
     }
+    .sort {
+        width: 100%;
+    }
+    .nav {
+        display: flex;
+        width: 90%;
+    }
 }
 
 @media (max-width: 420px) {
     td, th {
         width: 80px;
-        height: 5em;
+        height: 4em;
         padding-left: 10px;
         text-align: center;
         cursor:default;
     }
+
 }
 
 @keyframes hover {
