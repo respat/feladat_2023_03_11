@@ -1,3 +1,13 @@
+/*
+* File: style.css
+* Author: Resperger Patrik
+* Copyright: 2023, Resperger Patrik
+* Group: Szoft I/1/E
+* Date: 2023-03-13
+* Github: https://github.com/respat/
+* Licenc: GNU GPL
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
 
 :root{
@@ -25,15 +35,17 @@ body {
 }
 
 .container {
+    margin-top: 30px;
     min-height: 735px;
     display: flex;
     height: 100vh;
-    justify-content: center;
+    justify-content:start;
     align-items: center;
     flex-direction: column;
 }
 
-.cim-light {
+
+.idezet-dark {
     color: white;
 }
 
@@ -113,6 +125,7 @@ body {
 
 .szerzo {
     margin-top: 40px;
+    text-align: center;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.6);
 }
@@ -185,6 +198,7 @@ th {
     border-bottom: 2px solid var(--purple);
 }
 
+
 td, th {
     width: 100px;
     height: 4em;
@@ -194,12 +208,13 @@ td, th {
 
 .idezet {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: justify;
+    text-align: center;
     font-family: 'Esteban', sans-serif;
     font-size: large;
-    padding-bottom: 30px;
-    width: 30%;
+    margin-bottom: 20px;
+    width: 40%;
 }
 
 .dark-bg {
@@ -234,6 +249,7 @@ td:last-child, th:last-child {
         border-collapse: separate;
         border-spacing: 0 0.5em;
     }
+
     .filter-container {
         display: flex;
         width: 80%;
@@ -243,6 +259,10 @@ td:last-child, th:last-child {
     .nav {
         display: flex;
         width: 80%;
+    }
+    .idezet {
+
+        width: 60%;
     }
 }
 
@@ -265,6 +285,11 @@ td:last-child, th:last-child {
         display: flex;
         width: 90%;
     }
+    .idezet {
+        flex-direction: column;
+        margin: 20px;
+        width: 70%;
+    }
 }
 
 @media (max-width: 420px) {
@@ -275,7 +300,11 @@ td:last-child, th:last-child {
         text-align: center;
         cursor:default;
     }
-
+    .idezet {
+        flex-direction: column;
+        margin: 20px;
+        width: 90%;
+    }
 }
 
 @keyframes hover {

@@ -1,3 +1,13 @@
+/*
+* File: app.js
+* Author: Resperger Patrik
+* Copyright: 2023, Resperger Patrik
+* Group: Szoft I/1/E
+* Date: 2023-03-13
+* Github: https://github.com/respat/
+* Licenc: GNU GPL
+*/
+
 const tableBody = document.querySelector('#tableBody');
 const bikeName = document.querySelector('#name');
 const bikePrice = document.querySelector('#price');
@@ -13,6 +23,7 @@ const sort = document.querySelector('.sort');
 const filterTitle = document.querySelector('#filter-title')
 const szerzo = document.querySelector('.szerzo');
 const nav = document.querySelector('nav');
+const idezet = document.querySelector('.idezet');
 let darkMode = false;
 let abcRendezve = false;
 let arRendezve = false;
@@ -22,9 +33,10 @@ let counter = -1;
 
 //Animation timeline GSAP
 const tl = gsap.timeline();
+tl.fromTo(idezet, {y:-30, opacity: 0}, {duration: 0.4, y: 0, opacity:1, ease: "power2"})
 
 const bikeLista = [
-    { name: "Chassis", wheels: 28, purpose: "Offroad", price: 557900},
+    { name: "Cassis", wheels: 28, purpose: "Offroad", price: 557900},
     { name: "Alboin 900", wheels: 28, purpose: "Trekking", price: 519900},
     { name: "Asgard", wheels: 29, purpose: "Technikás utak", price: 519900},
     { name: "Ruga", wheels: 29, purpose: "Hegyi", price: 372900},
@@ -137,10 +149,6 @@ function listaRendez() {
   }
 }
 
-// sortBtn.addEventListener('mouseleave', () => {
-  
-// })
-
 function bikeKiIr(){
     bikeLista.forEach((bike) =>{
         let tr = document.createElement('tr');
@@ -155,6 +163,7 @@ function bikeKiIr(){
           sort.classList.add("dark");
           nav.classList.add("dark-bg");
           szerzo.classList.add("szerzo-light");
+          idezet.classList.add("idezet-dark");
         }
         else {
           container.classList.remove("dark-bg");
@@ -163,8 +172,9 @@ function bikeKiIr(){
           sort.classList.remove("dark");
           nav.classList.remove("dark-bg");
           szerzo.classList.remove("szerzo-light");
+          idezet.classList.remove("idezet-dark");
         }
-        tl.fromTo(tr, {y: -10, opacity: 0, zindex: -1}, {duration: 0.12, y: 0, opacity: 1, ease: "power4"})
+        tl.fromTo(tr, {y: -10, opacity: 0}, {duration: 0.12, y: 0, opacity: 1, ease: "power4"})
         tdName.textContent = bike.name;
         tdWheels.textContent = bike.wheels;
         tdPurpose.textContent = bike.purpose;
